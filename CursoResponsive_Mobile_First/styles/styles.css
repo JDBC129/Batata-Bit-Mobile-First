@@ -1,0 +1,609 @@
+/*
+    1. **Posicionamiento** --> static, absolute, relative, fixed.
+    2. **Modelo de caja** (*Box model*) --> margin, border, padding, content.
+    3. **Tipografía** --> tipos, tamaños de fuente, etc.
+    4. **Estilos visuales** --> box-shadow, border-radius, gradient, etc.
+    5. **Otros** --> misceláneos, reglas CSS y más.
+*/
+
+:root{
+    --fuente-inter: 'Inter', sans-serif;
+    --fuente-DM-Sans: 'DM Sans', sans-serif;
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D4;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --warm-black-1: #282623;
+    --grey: #BABABA;
+    --off-white: #FAF8F7;
+    --white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: var(--fuente-DM-Sans);
+}
+
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 32rem;
+    height: 33.4rem;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(207.8deg, #201E1C 16%,#F7931A);
+}
+
+header img{
+    width: 15rem;
+    height: 2.4rem;
+    margin-top: 6rem;
+}
+
+.header__title--container{
+    width: 90%;
+    min-width: 28.8rem;
+    max-width: 90rem;
+    height: 21.8rem;
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+.header__title--container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+}
+
+.header__title--container p{
+    color: var(--soft-orange);
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+.header__title--container .header--button{
+    position: absolute;
+    display: block;
+    top: calc(100% - 2.4rem);
+    left: calc(50% - 11.5rem);
+    width: 22.9rem;
+    padding: 1.5rem;
+    height: 4.8rem;
+    background-color: var(--off-white);
+    /*sombra*/
+    box-shadow: 0rem 0.4rem 0.8rem rgba(89, 73, 30,0.16);
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+.header--button span{
+    display: inline-block;
+    width: 1.3rem;
+    height: 0.8rem;
+    margin-left: 1rem;
+    background-image: url("../assets/icon/flecha-abajo.svg");
+}
+.header--button:hover{
+    color: var(--bitcoin-orange);
+}
+
+
+/*Estilos de las secciones, de la tabla y de la imagen de bitcoin*/
+
+main{
+    width: 100%;
+    min-width: 32rem;
+    height: auto;
+    background-color: var(--off-white);  
+}
+
+.main__schange--container{
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+.main__schange--container--title{
+    width: 90%;
+    min-width: 28.8rem;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+.main__schange--container .background--img{
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    background-image: url(../assets/icon/Bitcoin.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main__schange--container--title h2{
+    margin-bottom: 3rem;
+    font-size: 2.4rem;
+    font-weight: bold;  /*se aplica un peso o grosor a la fuente*/
+    line-height: 2.6rem; /*se le aplica una distancia entre lineas del texto*/
+    color: var(--warm-black);
+}
+.main__schange--container--title p{
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+.main__currency--table, .main__comissions--table{
+    width: 70%;
+    min-width: 23.5rem;
+    max-width: 50rem;
+    height: 36rem;
+    margin: 0 2rem;
+    font-family: var(--fuente-inter);
+}
+.main__currency--table .currency--table--title{
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    margin-right: 15rem;
+    color: var(--bitcoin-orange);
+}
+.main__comissions--table .comissions--table--title{
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    margin-right: 15rem;
+    color: var(--secondary-blue);
+}
+.currency--table--container, .comissions--table--container{
+    width: 90%;
+    scroll-snap-align: center;
+    min-width: 23rem;
+    max-width: 30rem;
+    height: 25rem;
+    margin: 0 auto;
+}
+.currency--table--container table, .comissions--table--container table{
+    width: 100%;
+    height: 100%;
+}
+.currency--table--container td, .comissions--table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--white);
+}
+.currency--table--container .table__top--left, .comissions--table--container .table__top--left{
+    border-top-left-radius: 1.5rem;
+}
+.currency--table--container .table__top--right, .comissions--table--container .table__top--right{
+    border-top-right-radius: 1.5rem;
+}
+.currency--table--container .table__bottom--left, .comissions--table--container .table__bottom--left{
+    border-bottom-left-radius: 1.5rem;
+}
+.currency--table--container .table__bottom--right, .comissions--table--container .table__bottom--right{
+    border-bottom-right-radius: 1.5rem;
+}
+.currency--table--container .table--right, .comissions--table--container .table--right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+.currency--table--container .table--right > .down{
+    background-image: url(../assets/icon/trending-down-1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    display: inline-block;
+}
+.currency--table--container .table--right > .up{
+    background-image: url(../assets/icon/trending-up-1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    display: inline-block;
+    font-family: var(--fuente-inter);
+}
+.currency--table--date, .comissions--table--date{
+    width: 19rem;
+    height: 3rem;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 0.8rem;
+    color: var(--warm-black);
+    line-height: 1.5rem;
+}
+.currency--table--date{
+    background-color: var(--soft-orange);
+}
+.comissions--table--date{
+    background-color: var(--soft-blue);
+}
+
+/*Estilos del scroll horizontal de las tablas*/
+
+.main__tables--container{
+    display: flex;
+    height: 40rem;
+    overflow-x: scroll; /*se agrega un scrool horiznontal en eje x*/
+    overscroll-behavior-x: contain; /*se agrega que el scroll en eje x este contenido*/
+    scroll-snap-type: x proximity; 
+    gap: 3rem;
+}
+
+/*Estilos de la sección de beneficios*/
+.main__product--detail{
+    position: relative;
+    width: 100%;
+    min-width: 32rem;
+    height: auto;
+    padding: 2rem 1rem;
+    color: var(--white);
+    background-color: var(--warm-black);
+}
+.product__batata--logo{
+    position: absolute;
+    background-image: url("../assets/icon/potato-single.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 4rem;
+    height: 2.5rem;
+    top: calc(0% - 1.2rem);
+    left: calc(50% - 2rem);
+}
+.product__detail--title{
+    width: 90%;
+    min-width: 2.88rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    height: auto;
+    text-align: center;
+}
+.product__detail--title h2{
+    line-height: 2.6rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.product__detail--title p{
+    color: #808080;
+    margin-top: 2.4rem;
+    margin-bottom: 3.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.product__detail--container{
+    width: 100%;
+    min-width: 2.88rem;
+    max-width: 40rem;
+    min-height: 15rem;
+    margin: 1.5rem auto;
+    padding: 1.6rem;
+    background-color: var(--warm-black-1);
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.16);
+}
+.product__card--title{
+    line-height: 1.8rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.product__card--body{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    color: #808080;
+}
+
+.icon--card{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.clock{
+    background-image: url("../assets/icon/reloj.svg");
+}
+.eye{
+    background-image: url("../assets/icon/ojo.svg");
+}
+.dollar{
+    background-image: url("../assets/icon/dolar.svg");
+}
+.check{
+    background-image: url("../assets/icon/check-circular.svg");
+}
+
+/*Estilos de la sección de Comodín*/
+
+.bitcoin__img--container{
+    width: 100%;
+    min-width: 32rem;
+    height: 70vh;
+    background-image: url("../assets/img/bitcoinbaby\ 1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.bitcoin__img--container h2{
+    padding-top: 6rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--white);
+}
+
+/*Estilos de la sección de planes*/
+
+.main__plans--container{
+    width: 100%;
+    min-width: 32rem;
+    padding-bottom: 7rem;
+    text-align: center;
+}
+.plans--title{
+    width: 90%;
+    min-width: 28.8rem;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    /* margin-top: 5rem; */
+}
+.plans--title h2{
+    padding-top: 5rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+.plans--title p{
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+.plans__container--card{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 19rem;
+    max-width: 30rem;
+    min-height: 27rem;
+    margin: 5rem 3rem 0;
+    padding: 0rem 1.5rem;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    box-shadow: 0rem 0.4rem 0.8rem rgba(89,73,30,0.16);
+}
+.recommended{
+    position: absolute;
+    width: 12rem;
+    height: 3.1rem;
+    background-color: var(--bitcoin-orange);
+    border-radius: 0.8rem;
+    color: var(--white);
+    left: calc(50% - 6rem);
+    top: calc(0% - 1.5rem);
+    font-size: 1.2rem;
+    font-family: var(--fuente-inter);
+    padding: 0.6rem;
+}
+/* .recommended:hover{
+    background: linear-gradient(180deg, #201E1C 16%,#F7931A);
+    width: 13rem;
+    height: 3.5rem;
+    left: calc(50% - 6.5rem);
+    top: calc(0% - 2rem);
+    padding: 0.8rem;
+} */
+.plans__card--title{
+    padding-top: 3rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+}
+.plans__card--price{
+    padding: 0.8rem 0rem 1.6rem 0rem;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.6rem;
+    color: var(--warm-black);
+    font-family: var(--fuente-inter);
+}
+.plans__card--price >sup{
+    font-size: 1.5rem;
+    vertical-align: 2.5rem;  /*vertical-align es una propiedad de css que te permite editar el alineado verticalmente de diferetenes textos*/
+}
+.plans__card--saving{
+    font-size: 1.2rem;
+    font-family: var(--fuente-inter);
+    padding: 0rem 1.6rem 1.6rem 1.6rem;
+    font-weight: 500;
+    line-height: 1.4rem;
+    color: #757575;
+}
+.plans__card--button{
+    width: 15rem;
+    height: 4.8rem;
+    margin-top: 2rem;
+    background-color: var(--white);
+    border: 0.2rem solid var(--bitcoin-orange);
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+    font-family: var(--fuente-DM-Sans);
+}
+.plans__card--button span{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    background-image: url(../assets/icon/flecha.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: text-bottom;
+}
+
+/*Estilos de las demás cartas*/
+
+.recommended--2{
+    position: absolute;
+    width: 12rem;
+    height: 3.1rem;
+    background-color: var(--secondary-blue);
+    border-radius: 0.8rem;
+    color: var(--white);
+    left: calc(50% - 6rem);
+    top: calc(0% - 1.5rem);
+    font-size: 1.2rem;
+    font-family: var(--fuente-inter);
+    padding: 0.6rem;
+}
+.recommended--3{
+    position: absolute;
+    width: 12rem;
+    height: 3.1rem;
+    background-color: var(--warm-black-1);
+    border-radius: 0.8rem;
+    color: var(--white);
+    left: calc(50% - 6rem);
+    top: calc(0% - 1.5rem);
+    font-size: 1.2rem;
+    font-family: var(--fuente-inter);
+    padding: 0.6rem;
+}
+.plans__card--saving--3{
+    font-size: 1.2rem;
+    font-family: var(--fuente-inter);
+    padding: 0rem 0rem 1.6rem 0rem;
+    font-weight: 500;
+    line-height: 1.4rem;
+    color: #757575;
+}
+.plans__card--button--2{
+    width: 15rem;
+    height: 4.8rem;
+    margin-top: 2rem;
+    background-color: var(--white);
+    border: 0.2rem solid var(--secondary-blue);
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+    font-family: var(--fuente-DM-Sans);
+}
+.plans__card--button--3{
+    width: 15rem;
+    height: 4.8rem;
+    margin-top: 0.4rem;
+    background-color: var(--white);
+    border: 0.2rem solid var(--warm-black);
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+    font-family: var(--fuente-DM-Sans);
+}
+
+.plans__card--button--2 span{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    background-image: url(../assets/icon/flecha.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: text-bottom;
+}
+.plans__card--button--3 span{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    background-image: url(../assets/icon/flecha.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: text-bottom;
+}
+
+/*scroll horizontal???*/
+
+.plans__container--slider{
+    display: flex; /*se aplica flex para que tenga un display flexible*/
+    /* gap: 5rem; */
+    height: 32.6rem; /*se debe de agregar una altura más grande que de los propios contenedores hijos de esta etiqueta*/
+    overflow-x: scroll; /*se agrega un scrool horiznontal en eje x*/
+    overscroll-behavior-x: contain; /*se agrega que el scroll en eje x este contenido*/
+    scroll-snap-type: x proximity; 
+}
+
+/*Estilos del footer*/
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    background-color: var(--bitcoin-orange);
+}
+footer section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.footer--left{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.footer--left li{
+    margin: 1rem 0;
+    list-style-type: none;
+}
+.footer--left li a{
+    text-decoration: none;
+    color: var(--off-white);
+}

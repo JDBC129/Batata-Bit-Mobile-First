@@ -1,0 +1,18 @@
+.plans__container--slider{
+    justify-content: center;
+    overflow-x:auto;
+    overscroll-behavior-x: none; 
+    scroll-snap-type: none; 
+}
+.plans__container--card{
+    scroll-snap-align: none;
+}
+.main__tables--container{
+    justify-content: center;
+}
+.product__cards--container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 93rem;
+    margin: 0 auto;
+}
